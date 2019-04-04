@@ -1,4 +1,4 @@
-package in.100m.devops.jenkins
+package com.example.devops.jenkins
 
 
 class Utilities implements Serializable {
