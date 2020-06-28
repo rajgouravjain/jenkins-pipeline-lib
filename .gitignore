@@ -28,6 +28,6 @@ build
 sharedlib
 .gradle
 **/.gradle
-
+.out
 ##Intellij directory
 .idea
