@@ -1,3 +1,3 @@
 # jenkins-pipeline-lib
-Shared library for Jenkins pipeline
-Testing library from https://github.com/jenkinsci/JenkinsPipelineUnit/
+- An ideal working setup for Shared library for Jenkins pipeline. It is based on Jenkins testing library https://github.com/jenkinsci/JenkinsPipelineUnit/.
+
