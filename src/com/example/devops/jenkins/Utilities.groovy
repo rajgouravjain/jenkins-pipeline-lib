@@ -16,21 +16,24 @@ class Utilities implements Serializable {
       return jconf 
     }
     def build(jconf,workspace){
+      steps.sh workspace + "/scripts/prebuild.sh"
+      steps.sh workspace + "/scripts/build.sh"
+      setps.sh workspace + "/scripts/postbuild.sh"
+    }
+
+    def test(jconf,workspace){
     if ( jconf.unittest == true ){
        steps.sh workspace + "/scripts/unittest.sh"
        }
     }
 
-    def test(jconf,workspace){
-
-      steps.sh "echo test utils"
-    }
-
     def deploy(jconf,workspace){
-      steps.sh "echo deploy utils"
+      steps.sh workspace + "/scripts/predeploy.sh"
+      steps.sh workspace + "/scripts/deploy.sh"
+      setps.sh workspace + "/scripts/postdeploy.sh"
     }
 
    def smoketest(jconf,workspace){
-     steps.sh "echo smoketest utils"
+      setps.sh workspace + "/scripts/smoketest.sh"
    }
 }
