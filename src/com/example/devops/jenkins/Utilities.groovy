@@ -17,8 +17,8 @@ class Utilities implements Serializable {
     }
     def build(jconf){
     if ( jconf.unittest == true ){
-
        steps.sh env.WORKSPACE + /scripts/unittest.sh
+       }
     }
 
     def test(jconf){
