@@ -15,22 +15,22 @@ class Utilities implements Serializable {
       def jconf = parser.load((jenkins_config_yaml as File).text)
       return jconf 
     }
-    def build(jconf){
+    def build(jconf,workspace){
     if ( jconf.unittest == true ){
-       steps.sh env.WORKSPACE + /scripts/unittest.sh
+       steps.sh workspace + /scripts/unittest.sh
        }
     }
 
-    def test(jconf){
+    def test(jconf,workspace){
 
       steps.sh "echo test utils"
     }
 
-    def deploy(jconf){
+    def deploy(jconf,workspace){
       steps.sh "echo deploy utils"
     }
 
-   def smoketest(jconf){
+   def smoketest(jconf,workspace){
      steps.sh "echo smoketest utils"
    }
 }
