@@ -14,5 +14,6 @@ class Utilities implements Serializable {
       Yaml parser = new Yaml()
       def jconf = parser.load((jenkins_config_yaml as File).text)
       return jconf 
+    }
 
 }
