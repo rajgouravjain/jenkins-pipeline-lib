@@ -18,7 +18,7 @@ class Utilities implements Serializable {
     def build(jconf,workspace){
       steps.sh workspace + "/scripts/prebuild.sh"
       steps.sh workspace + "/scripts/build.sh"
-      setps.sh workspace + "/scripts/postbuild.sh"
+      steps.sh workspace + "/scripts/postbuild.sh"
     }
 
     def test(jconf,workspace){
@@ -30,10 +30,10 @@ class Utilities implements Serializable {
     def deploy(jconf,workspace){
       steps.sh workspace + "/scripts/predeploy.sh"
       steps.sh workspace + "/scripts/deploy.sh"
-      setps.sh workspace + "/scripts/postdeploy.sh"
+      steps.sh workspace + "/scripts/postdeploy.sh"
     }
 
    def smoketest(jconf,workspace){
-      setps.sh workspace + "/scripts/smoketest.sh"
+      steps.sh workspace + "/scripts/smoketest.sh"
    }
 }
